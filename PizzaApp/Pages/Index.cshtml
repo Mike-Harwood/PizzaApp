@@ -3,3 +3,12 @@
 @{
     ViewData["Title"] = "Home page";
 }
+
+
+@using PizzaApp.Operations
+
+
+<label>Choose you Pizza </label>
+@*List Box for Pizza Enum            *@
+<select asp-for="@Model.pizza.PizzaSelected" asp-items="Html.GetEnumSelectList<PizzaEnum>()">
+</select>

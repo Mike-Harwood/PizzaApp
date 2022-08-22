@@ -7,7 +7,7 @@ namespace PizzaApp.Models
     {
 
 
-        //public int ID { get; set; }
+        public int ID { get; set; }
         public string PizzaName { get; set; }
 
         public string Description { get; set; }
@@ -16,7 +16,7 @@ namespace PizzaApp.Models
 
         public List<string> PizzaCost { get; set; }
 
-        public string ChefName { get; set; }
+        public virtual string ChefName { get; set; } = "smith";
 
         public string Image { get; set; }
 
@@ -25,6 +25,9 @@ namespace PizzaApp.Models
         public bool isVegetarian { get; set; }
 
         public bool IsFirstload { get; set; } = false;
+
+        // Pull down Menu 
+        public int? PizzaSelected { get; set; }
 
 
         [Display(Name = "Pizza Choice")]

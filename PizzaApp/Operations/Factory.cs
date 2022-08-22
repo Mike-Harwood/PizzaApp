@@ -2,7 +2,7 @@
 
 namespace PizzaApp.Operations
 {
-    public class Factory
+    public static class Factory
     {
         public static Pizza GetAPizza(int? id)
         {
