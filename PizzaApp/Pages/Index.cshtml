@@ -8,7 +8,39 @@
 @using PizzaApp.Operations
 
 
-<label>Choose you Pizza </label>
-@*List Box for Pizza Enum            *@
-<select asp-for="@Model.pizza.PizzaSelected" asp-items="Html.GetEnumSelectList<PizzaEnum>()">
-</select>
+<div class="card" style=" margin-top: 20px">
+    <div class="card-header">
+        <h1>Pizza App</h1>
+    </div>
+    <div class="card-body">
+        <form method="post">
+
+            <label>Choose you Pizza </label>
+            @*List Box for Pizza Enum*@
+            <select asp-for="PizzaSelected" asp-items="Html.GetEnumSelectList<PizzaEnum>()">
+            </select>
+
+            <input type="submit" value="Submit" asp-action="Index" />
+        </form>
+    </div>
+
+
+
+
+
+    <div class="card-footer">
+        @if (Model.IsFirstLoad == true)
+        {
+            <h3>@Model.pizza.PizzaName</h3>
+            <h6>@Model.pizza.Description</h6>
+            @*<h3>@Model.pizza.PizzaCost</h3>*@
+
+            <h3>@Model.pizza.PizzaName</h3>
+            <h4>@Model.pizza.isGlutenfree</h4>
+            <h4>@Model.pizza.isVegetarian</h4>
+            <h3>@Model.pizza.ChefName</h3>
+
+        }
+
+
+    </div>

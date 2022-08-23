@@ -2,9 +2,7 @@
 {
     public class Hawaiian : Pizza
     {
-
         public Hawaiian()
-
 
         {
             ID = 1;
@@ -14,16 +12,21 @@
             PizzaCost.Add("small-$23");
             PizzaCost.Add("medium-$26");
             PizzaCost.Add("large-$33");
-            ChefName = ChefName;
+
+
             Image = "";
             isGlutenfree = true;
             isVegetarian = true;
 
+            AddChefName("Smith");
+
+
         }
 
+        public override void AddChefName(string chef)
+        {
+            base.AddChefName($"{chef}");
+        }
     }
-
-
-
 
 }

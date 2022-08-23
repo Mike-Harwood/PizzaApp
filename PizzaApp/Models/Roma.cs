@@ -2,6 +2,8 @@
 {
     public class Roma : Pizza
     {
+        public bool IsGlutenfree { get; set; }
+        public bool IsVegetarian { get; set; }
         public Roma()
         {
             ID = 3;
@@ -11,14 +13,16 @@
             PizzaCost.Add("small-$24");
             PizzaCost.Add("medium-$27");
             PizzaCost.Add("large-$38");
-            ChefName =
             Image = "";
             isGlutenfree = true;
             isVegetarian = true;
 
+            AddChefName("Mark");
         }
 
-
-
+        public override void AddChefName(string chef)
+        {
+            base.AddChefName($"{chef}");
+        }
     }
 }
