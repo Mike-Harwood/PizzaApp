@@ -8,7 +8,87 @@
 @using PizzaApp.Operations
 
 
-<label>Choose you Pizza </label>
-@*List Box for Pizza Enum            *@
-<select asp-for="@Model.pizza.PizzaSelected" asp-items="Html.GetEnumSelectList<PizzaEnum>()">
-</select>
+<div class="card" style=" margin-top: 20px">
+    <div class="card-header">
+        <h1>Pizza App</h1>
+    </div>
+    <div class="card-body">
+        <form method="post">
+
+            <label>Choose you Pizza </label>
+            @*List Box for Pizza Enum*@
+            <select asp-for="PizzaSelected" asp-items="Html.GetEnumSelectList<PizzaEnum>()">
+            </select>
+
+            <input type="submit" value="Submit" asp-action="Index" />
+        </form>
+    </div>
+
+
+
+
+
+    <div class="card-footer">
+        @if (Model.IsFirstLoad == true)
+            @if (Model.IsGlutenfree == true)
+                @if (Model.IsVegetarian == true)
+                {
+                    <img src="~/images/@Model.pizza.Image" class="col-lg-3" />
+
+                    <h3>@Model.pizza.PizzaName</h3>
+                    <h6>@Model.pizza.Description</h6>
+
+                    <h3>@Model.pizza.ChefName</h3>
+                    <h3>Is this pizza glutin Free? @Model.pizza.IsGlutenfree</h3>
+                    <h3>Is this pizz Vegetarian? @Model.pizza.IsVegetarian</h3>
+
+
+
+
+
+
+                    <!--Ingredients -->
+                    <div>
+                        <ul>
+                            <li>
+                                <h3 class="col-lg-2">Ingredients</h3>
+
+                                @foreach (var ingredient in Model.pizza.Ingredients)
+                                {
+                                    <h6>@ingredient</h6>
+                                }
+
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!--Pizza Cost-->
+                    <div>
+                        <ul>
+
+                            <h3 class="col-lg-2">
+                                Pizza Cost
+                            </h3>
+
+
+                            @foreach (var pizzaCost in Model.pizza.PizzaCost)
+                            {
+                                <h6>@pizzaCost</h6>
+                            }
+
+
+                        </ul>
+                    </div>
+
+
+
+                    @*<h4>@Model.pizza.isGlutenfree</h4>
+                        <h4>@Model.pizza.isVegetarian</h4>*@
+
+
+                }
+
+            </div>
+        </div>
+
+

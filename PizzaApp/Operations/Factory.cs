@@ -6,19 +6,14 @@ namespace PizzaApp.Operations
     {
         public static Pizza GetAPizza(int? id)
         {
-
             switch (id)
 
             {
-
                 case 0:
-
 
                     return new Pizza();
 
-
                 case 1:
-
 
                     return new Hawaiian();
 
@@ -32,13 +27,8 @@ namespace PizzaApp.Operations
                 default:
 
                     return new Pizza();
-
             }
 
-
         }
-
     }
 }
-
-
