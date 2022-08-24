@@ -1,8 +1,10 @@
 ﻿
 
+using PizzaApp.Interface;
+
 namespace PizzaApp.Models
 {
-    public class Pizza
+    public class Pizza : IPizza
     {
 
         public int ID { get; set; }
