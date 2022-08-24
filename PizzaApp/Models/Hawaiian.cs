@@ -23,6 +23,9 @@ namespace PizzaApp.Models
             AddChefName("Created by Chef Smith");
 
 
+            AddChefName("Smith");
+
+
         }
 
         public override void AddChefName(string chef)
